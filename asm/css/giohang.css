@@ -1,0 +1,287 @@
+@media (max-width: 767px) {
+    table.table-cart tr:last-child td {
+        border: none;
+    }
+}
+
+@media (max-width: 767px) {
+    table.table-cart tr td.item {
+        width: calc(100% - 80px);
+        float: left;
+        padding-left: 5px;
+    }
+}
+table.table-cart tr td.item {
+    padding-left: 15px;
+}
+table.table-cart tr:first-child td {
+    border-top: 0;
+}
+@media (max-width: 767px) {
+    table.table-cart tr td {
+        border: 0;
+        padding: 0 5px;
+    }
+}
+@media (max-width: 767px) {
+    table.table-cart tr td.image img {
+        max-width: 70px;
+        background: #fff;
+    }
+}
+table.table-cart tr td {
+    padding: 20px 0;
+    border-top: 1px solid #ededed;
+    vertical-align: top;
+}
+table tr td, table tr th {
+    padding: 10px;
+    text-align: left;
+}
+table.table-cart tr td.image img {
+    max-width: 100px;
+}
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+   
+  /* main */
+.layoutPage-cart .heading-page {
+    position: relative;
+    text-align: center;
+    padding: 0 0 30px 0;
+}
+
+.layoutPage-cart .heading-page h1 {
+    font-size: 30px;
+    margin: 0 0 10px;
+}
+p {
+    margin: 0 0 10px 0;
+    line-height: 21px;
+}
+  table.table-cart {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ededed;
+}
+table {
+    width: 100%;
+    border-spacing: 0;
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+table.table-cart thead {
+    display: none;
+}
+table tr td:first-child, table tr th:first-child {
+    padding-left: 0px;
+}
+
+table tr td, table tr th {
+    padding: 10px;
+    text-align: left;
+}
+table.table-cart tr td.image {
+    text-align: center;
+    width: 110px;
+}
+table.table-cart tr td.item .price span {
+    font-size: 16px;
+    padding-right: 0;
+    font-weight: 600;
+}
+table.table-cart tr td.item .price {
+    margin: 0;
+    float: right;
+}
+table.table-cart tr:first-child td {
+    border-top: 0;
+}
+table.table-cart tr td {
+    padding: 20px 0;
+    border-top: 1px solid #ededed;
+    vertical-align: top;
+}
+.qty-click {
+    float: left;
+}
+.qty-click button.qtyminus.qty-btn {
+    border-right: none;
+}
+.qty-click button.qty-btn {
+    background: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    color: #abafb2;
+    height: 25px;
+    padding: 0;
+    text-align: center;
+    width: 25px;
+    border: 1px solid #dadbdd;
+    border-radius: 0;
+    float: left;
+    /* -webkit-appearance: none; */
+}
+.qty-click input.item-quantity {
+    font-weight: 500;
+    font-size: 15px;
+    height: 25px;
+    padding: 0;
+    text-align: center;
+    width: 35px;
+    background: #ededed;
+    border: 1px solid #dadbdd;
+    border-radius: 0;
+    float: left;
+    /* -webkit-appearance: none; */
+}
+.sidebox-group h4 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+}
+.checkout-note textarea {
+    border-radius: 0;
+    background: #ededed;
+    color: #252a2b;
+    font-size: 15px;
+    padding: 20px 15px;
+    outline: none;
+    width: 100% !important;
+    min-height: 130px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: all 150ms linear;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+textarea {
+    overflow: auto;
+}
+.sidebox-group h4 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+}
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+.sidebox-policy ul li {
+    display: block;
+    line-height: 25px;
+    position: relative;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.sidebox-order {
+    background: #fff;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 30px;
+    border: 1px solid #e1e3e4;
+    border-radius: 2px;
+}
+.sidebox-order div[class^="sidebox-order_"] {
+    margin-bottom: 15px;
+}
+.sidebox-order_title h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.sidebox-order_total {
+    font-size: 16px;
+    color: #5c5c5c;
+    font-weight: 600;
+    padding: 15px 0;
+    border-top: 1px dotted #dfe0e1;
+    border-bottom: 1px dotted #dfe0e1;
+}
+.sidebox-order_total p .total-price {
+    float: right;
+    color: red;
+    font-size: 24px;
+}
+.sidebox-order div[class^="sidebox-order_"]:last-child {
+    margin-bottom: 0px;
+}
+.sidebox-order_action .btncart-checkout {
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 12px 20px;
+    border-color: #e00707;
+}
+.button.dark {
+    color: #fff;
+    border-color: #f5a623;
+}
+.sidebox-order_action .btncart-checkout:before {
+    background-color: #e00707;
+}
+.button.dark:before {
+    background-color: #f5a623;
+}
+.button:before {
+    position: absolute;
+    content: '';
+    display: block;
+    left: -2px;
+    top: 0;
+    right: -2px;
+    bottom: 0;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+    z-index: -1;
+    background-color: #ffffff;
+    -webkit-transition: -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+ 
+.cart-buttons a, .cart-buttons .btn-checkout, .cart-buttons .btn-update {
+    display: inline-block;
+    vertical-align: top;
+    padding: 19px 20px;
+}
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 28px;
+    line-height: normal;
+    border: 1px solid #ffffff;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 1px;
+    background-color: transparent;
+    -webkit-transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    z-index: 1;
+    color: #252a2b;
+    overflow: hidden;
+}
+
+.link-continue {
+    margin: 10px 0 0;
+    text-align: center;
+}
+.link-continue a {
+    color: #f5a623;
+}
+
+

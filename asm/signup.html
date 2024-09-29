@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /> -->
+    <link rel="stylesheet" href="./css/signup.css">
+    <title>Đăng ký</title>
+</head>
+<body>
+    <main class="mainContent-theme ">
+        <div class="layout-account">
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-6 col-xs-12 wrapbox-heading-account">
+        <div class="header-page clearfix ">
+            <h1>Tạo tài khoản</h1>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-12 wrapbox-content-account ">
+        <div class="userbox">
+            <form class="needs-validation" novalidate>
+            <div  class="md-3 clearfix large_form">
+                <input type="text" placeholder="Họ"  class="form-control" size="30" required>
+                <div class="invalid-feedback">
+                    Vui lòng nhập họ của bạn
+                </div>
+            </div>
+            <div  class="mb-3 clearfix large_form">
+                <input type="text"  placeholder="Tên"  class="form-control" size="30" required >
+                <div class="invalid-feedback">
+                    Vui lòng nhập tên của bạn.
+				</div>
+            </div>
+            <div class=" mb-3 clearfix large_form" required>
+                <input id="radio1" type="radio" value="0" name="customer[gender]" > 
+                <label for="radio1">Nữ</label>
+                <input id="radio2" type="radio" value="1" name="customer[gender]">  
+                <label for="radio2">Nam</label>
+                <div class="invalid-feedback">
+                    Vui lòng chọn số giới tính.
+				</div>
+            </div>
+            <div id="form-birthday" class=" mb-3 clearfix large_form">
+                <input type="date" value="" placeholder="mm/dd/yyyy"  class="form-control" size="30"  required>
+                <div class="invalid-feedback">
+                    Vui lòng nhập ngày sinh của bạn.
+				</div>
+            </div>
+            <div id="form-email" class="mb-3 clearfix large_form">
+                <input  type="email" placeholder="Email"  class="form-control" size="30"required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,}$">
+                <div class="invalid-feedback">
+                    Vui lòng nhập email của bạn.
+                </div>
+			</div>
+            <div  class="mb-3 clearfix large_form large_form-mr10">
+                <input type="password"  placeholder="Mật khẩu"  class="password form-control" size="30" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,}$">
+                <div class="invalid-feedback">
+                    Vui lòng mật khẩu của bạn.
+                    </div>
+            </div>
+            <div class="clearfix large_form sitebox-recaptcha">
+                This site is protected by reCAPTCHA and the Google
+                <a href="#">Privacy Policy</a> 
+                and <a href="#">Terms of Service</a> apply.
+            </div>	
+            <div class="clearfix action_account_custommer">
+                <div class="action_bottom">
+                    <button class="btn p-3" type="submit" >ĐĂNG KÝ</button> 	
+                </div>						
+            </div>
+            <div class="mb-3 clearfix req_pass">
+                <a class="come-back" href="#!"><i class="fa fa-long-arrow-left"></i> Quay lại trang chủ</a>
+            </div>
+        </form> 
+        </div>
+       
+
+        </div>
+
+    </div>
+</div>
+</div>
+</main>
+<script src="./js/main.js"> </script>
+  
+
+
+
+   
+<!-- <script src="./js/angular-route.min.js"></script>
+<script src="./js/angular.min.jss"></script>
+<script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script> -->
+
+
+</body>
+</html>

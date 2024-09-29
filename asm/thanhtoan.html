@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    /> -->
+    <link rel="stylesheet" href="./css/thanhtoan.css" />
+    <title>Thanh Toán</title>
+    <style></style>
+  </head>
+
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="main-header">
+                <a href="/" class="logo">
+                  <h1 class="logo-text">Khacten.com</h1>
+                </a>
+
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="">Giỏ hàng</a>
+                  </li>
+                  <li class="breadcrumb-item breadcrumb-item-current">
+                    Thông tin giao hàng
+                  </li>
+                </ul>
+              </div>
+          <div class="wrap d-flex flex-wrap">
+            <div class="col-sm-12 col-xs-12  col-md-6" style="border-right: solid 1px;">
+                <div class="sidebar">
+                  <div class="sidebar-content">
+                    <div class="order-summary order-summary-is-collapsed">
+                      <h2 class="visually-hidden">Thông tin đơn hàng</h2>
+                      <div class="order-summary-sections">
+                        <div
+                          class="order-summary-section order-summary-section-product-list"
+                          data-order-summary-section="line-items"
+                        >
+                          <table class="table  product-table">
+                            <thead>
+                              <tr>
+                                <th scope="col">
+                                  <span class="visually-hidden">Hình ảnh</span>
+                                </th>
+                                <th scope="col">
+                                  <span class="visually-hidden">Mô tả</span>
+                                </th>
+                                <th scope="col">
+                                  <span class="visually-hidden">Số lượng</span>
+                                </th>
+                                <th scope="col">
+                                  <span class="visually-hidden">Giá</span>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr  ng-repeat="p in cart">
+                                <td class="product-image">
+                                  <div class="product-thumbnail">
+                                    <div class="product-thumbnail-wrapper">
+                                      <img
+                                        class="product-thumbnail-image"
+                                        alt=""
+                                        src="{{p.img1}}"
+                                      />
+                                    </div>
+                                    <span
+                                      class="product-thumbnail-quantity"
+                                      aria-hidden="true"
+                                      >{{p.qty}}</span>
+                                  </div>
+                                </td>
+                                <td class="product-description">
+                                  <span
+                                    class="product-description-name order-summary-emphasis"
+                                    >{{p.proName}}</span
+                                  >
+  
+                                  <span
+                                    class="product-description-variant order-summary-small-text"
+                                  >
+                                  </span>
+                                </td>
+                                <td class="product-quantity visually-hidden">
+                                
+                                </td>
+                                <td class="product-price">
+                                  <span class="order-summary-emphasis"
+                                    >{{p.proPrice * p.qty| number : 2}}</span
+                                  >
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+  
+                        <div
+                          class="order-summary-section order-summary-section-discount"
+                          data-order-summary-section="discount"
+                        >
+                          <form
+                            id="form_discount_add"
+                            accept-charset="UTF-8"
+                            method="post"
+                          >
+                            <input name="utf8" type="hidden" value="✓" />
+                            <div class="fieldset">
+                              <div class="field">
+                                <div class="field-input-btn-wrapper">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Mã giảm giá" aria-label="Mã giảm giá" aria-describedby="basic-addon1"  ng-model="code">
+                                        <button type="button" class="btn btn-secondary " ng-click="applyDiscount(code)">Sử dụng</button>
+                                      </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                       
+                        <div
+                          class="order-summary-section order-summary-section-total-lines payment-lines"
+                          data-order-summary-section="payment-lines"
+                        >
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">
+                                  <span class="visually-hidden">Mô tả</span>
+                                </th>
+                               
+                                <th scope="col">
+                                  <span class="visually-hidden">Giá</span>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="total-line total-line-subtotal">
+                                <td class="total-line-name">Tạm tính</td>
+                                <td class="total-line-price">
+                                  <span
+                                    class="order-summary-emphasis"
+                                    data-checkout-subtotal-price-target="50000000"
+                                  >
+                                  {{calculateTotal () | number: 2}}
+                                  </span>
+                                </td>
+                              </tr>
+  
+                              <tr class="total-line total-line-shipping">
+                                <td class="total-line-name">Phí vận chuyển</td>
+                                <td class="total-line-price">
+                                  <span
+                                    class="order-summary-emphasis"
+                                    data-checkout-total-shipping-target="{{ ship }}"
+                                  >
+                                  {{ ship | number: 2}}
+                                  </span>
+                                </td>
+                              </tr>
+                            </tbody>
+                            <tfoot class="total-line-table-footer">
+                              <tr class="total-line">
+                                <td class="total-line-name payment-due-label">
+                                  <span class="payment-due-label-total"
+                                    >Tổng cộng</span
+                                  >
+                                </td>
+                                <td class="total-line-name payment-due">
+                                  <span class="payment-due-currency">VND</span>
+                                  <span
+                                    class="payment-due-price"
+                                    data-checkout-payment-due-target="50000000"
+                                  >
+                                   {{calculateTotal ()| number:2}}
+                                  </span>
+                                  <span
+                                    class="checkout_version"
+                                    display:none=""
+                                    data_checkout_version="8"
+                                  >
+                                  </span>
+                                </td>
+                              </tr>
+                            </tfoot>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="col-sm-12 col-xs-12 col-md-6 col-lg">
+              <div class="main">
+                
+                <div class="main-content">
+                  <div class="step">
+                    <div class="step-sections steps-onepage" step="1">
+                      <div class="section">
+                        <div class="section-header">
+                          <h2 class="section-title">Thông tin giao hàng</h2>
+                        </div>
+                        <div
+                          class="section-content section-customer-information no-mb"
+                        >
+                          <p style="color: #d99009;" class="section-content-text">
+                            Bạn đã có tài khoản?
+                            <a href="#!account" style="color: #338dbc;">Đăng nhập</a>
+                          </p>
+
+                          <div class="fieldset">
+                            <div class="input-group mb-3">
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Họ và tên"
+                                aria-label="Họ và tên"
+                                aria-describedby="basic-addon1"
+                              />
+                            </div>
+                            <div class="input-group mb-3">
+                            
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Email"
+                                aria-label="Email"
+                                aria-describedby="basic-addon1"
+                              />
+                            </div>
+                            <div class="input-group mb-3">
+                              <input
+                                type="text"
+                                class="form-control"
+                                maxlength="15"
+                                placeholder="Số điện thoại"
+                                aria-label="Số điện thoại"
+                                aria-describedby="basic-addon1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="section-content">
+                          <div class="fieldset">
+                            <form>
+                              <div class="content-box mt0" style="box-shadow: none;">
+                                
+                                  <div class="input-group mb-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="Địa chỉ"
+                                      aria-label="Địa chỉ"
+                                      aria-describedby="basic-addon1"
+                                    />
+                                  </div>
+                                  <div class="row g-3 ">
+                                      <div class="col-md-4 selected-district">
+                                        Tỉnh/ thành phố
+                                        <select class="form-select" id="customer_shipping_district" ng-model="tinh" ng-options="tinh.Name for tinh in dsTinh"></select>
+                                      </div>
+                                      <div class="col-md-4 selected-district">
+                                        Quận/ Huyện
+                                        <select class="form-select" ng-model="huyen" ng-options="huyen.Name for huyen in tinh.Districts"></select>
+                                      </div>
+                                      <div class="col-md-4 selected-ward">
+                                        Phường/ Xã
+                                        <select class="form-select" ng-model="xa" ng-options="xa.Name for xa in huyen.Wards"></select>
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <div id="change_pick_location_or_shipping">
+                          <div id="section-shipping-rate">
+                            <div class="order-checkout__loading--box">
+                              <div
+                                class="order-checkout__loading--circle"
+                              ></div>
+                            </div>
+                            <div class="section-header mt-4">
+                              <h2 class="section-title">
+                                Phương thức vận chuyển
+                              </h2>
+                            </div>
+                            <div class="section-content">
+                              <div class="content-box blank-slate">
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" ng-model="selectedOption" ng-change="selectOption('option1')">
+                                  <label class="form-check-label" for="inlineRadio1">Vận chuyển hỏa tốc</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" ng-model="selectedOption" ng-change="selectOption('option2')">
+                                  <label class="form-check-label" for="inlineRadio2">Vận chuyển nhanh</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div id="section-payment-method" class="section">
+                            <div class="order-checkout__loading--box">
+                              <div
+                                class="order-checkout__loading--circle"
+                              ></div>
+                            </div>
+                            <div class="section-header">
+                              <h2 class="section-title">
+                                Phương thức thanh toán
+                              </h2>
+                            </div>
+                            <div class="section-content mt-4">
+                              <div class="content-box">
+                                <div class="radio-wrapper content-box-row">
+                                  <label
+                                    class="radio-label"
+                                    for=""
+                                  >
+                                    <div
+                                      class="radio-input payment-method-checkbox"
+                                    >
+                                      <input
+                                        class="form-check-input"
+                                        name="payment_method_id"
+                                        type="radio"
+                                        checked
+                                      />
+                                    </div>
+                                    <div class="radio-content-input">
+                                      <img
+                                        class="main-img"
+                                        src="https://hstatic.net/0/0/global/design/seller/image/payment/other.svg?v=6"
+                                      />
+                                      <div>
+                                        <span class="radio-label-primary"
+                                          >Chuyển khoản qua ngân hàng</span
+                                        >
+                                        <span
+                                          class="quick-tagline hidden"
+                                        ></span>
+                                      </div>
+                                    </div>
+                                  </label>
+                                </div>
+
+                                <div
+                                  class="radio-wrapper content-box-row content-box-row-secondary"
+                                  for=""
+                                >
+                                  <div class="blank-slate">
+                                    Vui lòng ghi đúng MÃ ĐƠN HÀNG trong nội dung
+                                    chuyển khoản. - Ngân hàng Vietcombank - Chi
+                                    nhánh Phú Nhuận: 1035720362 Chủ tài
+                                    khoản: Báo Văn Tài
+                                  </div>
+                                </div>
+
+                                <div class="radio-wrapper content-box-row">
+                                  <label
+                                    class="radio-label"
+                                    for="payment_method_id_1003045180"
+                                  >
+                                    <div
+                                      class="radio-input payment-method-checkbox"
+                                    >
+                                      <input
+                                      class="form-check-input"
+                                        name="payment_method_id"
+                                        type="radio"
+                                        value="1003045180"
+                                      />
+                                    </div>
+                                    <div class="radio-content-input">
+                                      <img
+                                        class="main-img"
+                                        src="https://hstatic.net/0/0/global/design/seller/image/payment/paypal.svg?v=6"
+                                      />
+                                      <div>
+                                        <span class="radio-label-primary"
+                                          >Ví PayPal</span
+                                        >
+                                        <span
+                                          class="quick-tagline hidden"
+                                        ></span>
+                                      </div>
+                                    </div>
+                                  </label>
+                                </div>
+
+                                <div class="radio-wrapper content-box-row">
+                                  <label
+                                    class="radio-label"
+                                    for="payment_method_id_1003089571"
+                                  >
+                                    <div
+                                      class="radio-input payment-method-checkbox"
+                                    >
+                                      <input
+                                       
+                                        id=""
+                                        class="form-check-input"
+                                        name="payment_method_id"
+                                        type="radio"
+                                        
+                                      />
+                                    </div>
+                                    <div class="radio-content-input">
+                                      <img
+                                        class="main-img"
+                                        src="https://hstatic.net/0/0/global/design/seller/image/payment/onepay.svg?v=6"
+                                      />
+                                      <div>
+                                        <span class="radio-label-primary"
+                                          >Thẻ Visa/Master/JCB/Amex/CUP qua cổng
+                                          OnePay</span
+                                        >
+                                        <span
+                                          class="quick-tagline hidden"
+                                        ></span>
+
+                                        <img
+                                          class="child-img"
+                                          src="https://hstatic.net/0/0/global/design/seller/image/payment/visa_master_jcb_amex_cup.svg?v=6"
+                                        />
+                                      </div>
+                                    </div>
+                                  </label>
+                                </div>
+
+                                <div class="radio-wrapper content-box-row">
+                                  <label
+                                    class="radio-label"
+                                    for="payment_method_id_1003450871"
+                                  >
+                                    <div
+                                      class="radio-input payment-method-checkbox"
+                                    >
+                                      <input
+                                        class="form-check-input"
+                                        name="payment_method_id"
+                                        type="radio"
+                                      />
+                                    </div>
+                                    <div class="radio-content-input">
+                                      <img
+                                        class="main-img"
+                                        src="https://hstatic.net/0/0/global/design/seller/image/payment/momo.svg?v=6"
+                                      />
+                                      <div>
+                                        <span class="radio-label-primary"
+                                          >Ví MoMo</span
+                                        >
+                                        <span
+                                          class="quick-tagline hidden"
+                                        ></span>
+                                      </div>
+                                    </div>
+                                  </label>
+                                </div>
+
+                                <div class="radio-wrapper content-box-row">
+                                  <label
+                                    class="radio-label"
+                                    for=""
+                                  >
+                                    <div
+                                      class="radio-input payment-method-checkbox"
+                                    >
+                                      <input
+                                      
+                                        class="form-check-input"
+                                        name="payment_method_id"
+                                        type="radio"
+                                    
+                                      />
+                                    </div>
+                                    <div class="radio-content-input">
+                                      <img
+                                        class="main-img"
+                                        src="https://hstatic.net/0/0/global/design/seller/image/payment/cod.svg?v=6"
+                                      />
+                                      <div>
+                                        <span class="radio-label-primary"
+                                          >Thanh toán khi giao hàng (COD)</span
+                                        >
+                                        <span
+                                          class="quick-tagline hidden"
+                                        ></span>
+                                      </div>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="step-footer" id="step-footer-checkout">
+                      <form
+                        id="form_next_step"
+                        accept-charset="UTF-8"
+                        method="post"
+                      >
+                        <input name="utf8" type="hidden" value="✓" />
+                        <button
+                        type="button"
+                        class="step-footer-continue-btn btn modal" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#exampleModalToggle"
+                        
+                      >
+                        <span class="btn-content ">Hoàn tất đơn hàng</span>
+                        <i class="btn-spinner icon icon-button-spinner"></i>
+                      </button>
+                      </form>
+                      <a class="step-footer-previous-link" href="#!cart">
+                        Giỏ hàng
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-footer footer-powered-by mt-2">
+                  Powered by Haravan
+                </div>
+              </div>
+             
+            </div>
+          </div>
+         
+      </div>
+      <div class="modal fade" tabindex="-1" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body text-center">
+              <p class="text-success">Chúc mừng bạn đã thanh toán thành công! <span><i class="fa-solid fa-check fa-shake"></i></span></p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- script -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script> -->
+  </body>
+</html>

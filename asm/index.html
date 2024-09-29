@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+  <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="./css/main.css"/>
+  <title>Index</title>
+</head>
+  <body ng-app="myapp">
+    <div class="container" ng-controller="myctrl">
+   <!-- <div class="top-header" style="background-color:rgb(243, 156, 18); text-align: center">
+        <p style="color: #fff;">Freeship với đơn hàng 1000K</p>
+    </div>  -->
+      <div class="container">
+        <nav class="navbar navbar-dark  navbar-expand-lg ">
+            <div class="container-fluid">
+                <button class="navbar-toggler bg-body-secondary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation  data-bs-target=" #navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01"">
+              <span class=" navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-body-secondary p-4">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Bóp/Ví
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Ví Sen</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Bóp/Túi/Ví</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Điện thoại
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Bao da hộp</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Ví nắp nhọn</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Bao da nắp dọc</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Bao da đeo lưng</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Dán da điện thoại</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Laptop/Máy Tính Bảng
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Dán da</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Bao da nắp gài</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Bao da nắp ngang</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="#!products">Tất cả sản phẩm</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="#">Kiểm tra tình trạng đơn hàng</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="#">Mẫu da</a>
+                        </li>
+                        <li class="nav-item ">
+                          <a class="nav-link " href="#!news">Tin tức</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link " href="#!contact">Liên hệ</a>
+                    </li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row d-flex justify-content-around">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg">
+                <nav class="navbar ">
+                    <a class="navbar-brand" href="#!"><img src="./img/logo.webp" alt=""
+                            style="background-repeat: none;"></a>
+                </nav>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg mt-5">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="keyword" placeholder="Tìm kiếm sản phẩm"
+                        aria-label="timkiemsanphan" aria-describedby="basic-addon1">
+                    <button class="btn btn-outline-warning input-group-text" id="basic-addon1"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg mt-5">
+                <div class="d-flex justify-content-around">
+                  <div class="dropdown" >
+                    <span><i class="fa-solid fa-circle-user"></i></span>
+                    <a class="dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-offset="10,20">
+                     Đăng ký/ Đăng nhập
+                    </a>
+                    <form id="loginForm" class="needs-validation dropdown-menu dropdown-menu-end dropdown-menu-lg-start p-4" style="min-width:300px" novalidate>
+                      <div class="header-form text-center">
+                        <h6 style="font-weight:600"> ĐĂNG NHẬP TÀI KHOẢN</h6>
+                        <p style="font-size:12px" >Nhập email và mật khẩu của bạn:</p>
+                      </div>
+                      <div class="mb-3">
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        <div class="invalid-feedback">
+                          Vui lòng nhập email.
+                        </div>
+                      </div>
+                      
+                      <div class="mb-3">
+                        <input type="password" class="form-control" id="password" placeholder="Mật khẩu" required >
+                        <div class="invalid-feedback">
+                          Vui lòng nhập mật khẩu
+                        </div>
+                      </div>
+                     
+                      <div class="footer-form text-center">
+                        <button type="submit" class="btn" >Đăng nhập</button>
+                        <p class="mt-2" >Khách hàng mới?<a href="#!account">Tạo tài khoản</a></p>
+                        <p>Quên mật khẩu?<a href="#" class="modal-pass" data-bs-toggle="modal" data-bs-target="#exampleModal">Khôi phục mật khẩu</a></p>
+                      </div>
+                    </form>
+                      
+                  </div>
+                  <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form  class=" needs-validation row g-3 " novalidate>
+                              <div class="header-form text-center">
+                                <h5 style="font-weight:600">ĐỔI MẬT KHẨU</h5>
+                              </div>
+                                <div class="social-container text-center">
+                                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                                   <div class="mb-3">
+                                    <span>Hoặc tài khoản của bạn</span>
+                                   </div>
+                                </div>
+                                
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Số điện thoại / Email" aria-label="SĐT hoặc email của bạn"  required>
+                                    <button class="btn btn-success" type="button" id="button-addon2">Gửi mã</button>
+                                    <div class="invalid-feedback">
+                                      Vui lòng nhập số điện thoại hoặc email của bạn.
+                                     </div>
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Mã xác nhận" aria-label="SĐT hoặc email của bạn"  required>
+                                    <div class="invalid-feedback">
+                                      Vui lòng nhập mã xác nhận.
+                                     </div>
+                                  </div>
+                                 
+                                  <div class="input-group mb-3">
+                                    <input type="password" class="form-control" placeholder="Mật khẩu mới" aria-label="SĐT hoặc email của bạn"  required>
+                                    <div class="invalid-feedback">
+                                      Vui lòng nhập mật khẩu mới.
+                                    </div>
+                                  </div>
+                                  
+                                <a href="#!"><span><i class="fas fa-long-arrow-alt-left"></i></span> Quay lại trang chủ</a>
+                                <div class="footer-form text-center">
+                                  <button type="submit" class="btn">Đổi mật khẩu</button>
+                                </div>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                    <div class="cart-product position-relative">
+                        <span><i class="fa-solid fa-bag-shopping"></i></span>
+                        <a class="link-header " href="#!cart">Giỏ hàng</a>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" ng-show="cart.length >= 1">
+                         <span class="count-cart" >{{ cart.length }}</span>
+                          <span class="visually-hidden"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Bóp/Ví
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" ng-click="keyword ='Ví sen' ">Ví Sen</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item"ng-click="keyword ='Bóp/Túi/Ví' " >Bóp/Túi/Ví</a></li>
+                            </ul>
+                        </li>
+                   <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Điện thoại
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" ng-click="keyword ='Bao da hộp' ">Bao da hộp</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" ng-click="keyword ='Ví nắp nhọn' ">Ví nắp nhọn</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" ng-click="keyword ='Bao da nắp dọc' ">Bao da nắp dọc</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" ng-click="keyword ='Bao da đeo lưng' ">Bao da đeo lưng</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" ng-click="keyword ='Dán da điện thoại' ">Dán da điện thoại</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Laptop/Máy Tính Bảng
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" ng-click="keyword ='Dán da' ">Dán da</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" ng-click="keyword ='Bao da nắp gài' ">Bao da nắp gài</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" ng-click="keyword ='Bao da nắp ngang' ">Bao da nắp ngang</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="#!products">Tất cả sản phẩm</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="#">Kiểm tra tình trạng đơn hàng</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="#">Mẫu da</a>
+                        </li>
+                        <li class="nav-item ">
+                          <a class="nav-link " href="#!news">Tin Tức</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link " href="#!contact">Liên hệ</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div> 
+
+
+    <!-- <div class="container">
+      <div ng-show="loading" class="position-fixed top-0 bottom-0 start-0 bg-danger end-0 z-3 d-flex justify-content-center align-items-center text-light">
+        <h1><i class="fa-solid fa-fan fa-spin-pulse"></i>Đang tải trang.....</h1>  
+      </div> -->
+
+
+      <ng-view></ng-view>
+   
+      <footer>
+        <div class="top-footer">
+          <div class="container mt-4">
+            <div class="row d-flex justify-content-around">
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg mt-2">
+                <div class="newtitle d-flex">
+                  <span class="icon-newtitle"
+                    ><i class="fa-solid fa-envelope"></i
+                  ></span>
+                  <p style="margin-left: 5px">Đăng ký nhận tin</p>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Nhập email của bạn"
+                    aria-label="email"
+                    aria-describedby="basic-addon1"
+                  />
+                  <button
+                    class="btn btn-outline-warning input-group-text"
+                    id="basic-addon1"
+                  >
+                    ĐĂNG KÍ
+                  </button>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg">
+                <div class="phone-contact d-flex">
+                  <span><i class="fa-solid fa-phone"></i></span>
+                  <span>Hỗ trợ / Tư Vấn: <a href="">18004849</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-footer">
+          <div class="container">
+            <div class="row mt-5">
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg">
+                <div class="footer-col footer-content1">
+                  <h5 class="footer-title mb-2">Giới Thiệu</h5>
+                  <div class="footer-content">
+                    <p>
+                      Trang mua sắm trực tuyến của Khắc Tên. Khắc tên giữ mọi
+                      bản quyền - © 2017 Khacten.com
+                    </p>
+                    <div class="logo-content">
+                      <a href=""
+                        ><img
+                          src="./img/logo_bct.webp"
+                          alt="Bộ Công Thương"
+                          width="150px"
+                      /></a>
+                    </div>
+                    <ul class="footerNav-social d-flex mt-4">
+                      <li>
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                      </li>
+                      <li>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                      </li>
+                      <li>
+                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg">
+                <div class="footer-col footer-block">
+                  <h5 class="footer-title mb-2">Chính sách & Đại lý</h5>
+                </div>
+                <div class="footer-content">
+                  <li class="item"><a href="">Kiểm tra đơn hàng</a></li>
+                  <li class="item"><a href="">Tìm kiếm</a></li>
+                  <li class="item"><a href="">Bảng giá</a></li>
+                  <li class="item"><a href="">Giới Thiệu</a></li>
+                  <li class="item"><a href="">Danh sách đại lý</a></li>
+                  <li class="item"><a href="">Chính sách bảo mật</a></li>
+                  <li class="item"><a href="">Chính sách bán hàng</a></li>
+                  <li class="item"><a href="">Bảo quản và vệ sinh da</a></li>
+                  <li class="item"><a href="./tintuc.html">Blog</a></li>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg">
+                <div class="footer-col">
+                  <h5 class="footer-title">Khắc Tên HCM</h5>
+                  <div class="footer-content footer-contact">
+                    <ul>
+                      <li class="contact">
+                        <span><i class="fa-solid fa-location-dot"></i></span> 70
+                        Bà Huyện Thanh Quan, P. Võ Thị Sáu, Q.3 (bên trong Trung
+                        Tâm Chỉnh Hình và Phục Hồi Chức Năng)
+                      </li>
+                      <li class="contact">
+                        <span><i class="fa-solid fa-phone-volume"></i></span>
+                        0932111222
+                      </li>
+                      <li class="contact">
+                        <span><i class="fa-solid fa-shop"></i></span> Giờ làm
+                        việc: 8h - 19h (T2 - T7)
+                      </li>
+                      <li class="contact">
+                        <span><i class="fa-solid fa-paper-plane"></i></span>
+                        khacten@khacten.com
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg">
+                <div class="footer-col">
+                  <h5 class="footer-title">Khắc Tên HN</h5>
+                  <div class="footer-content footer-contact">
+                    <ul>
+                      <li class="contact">
+                        <span><i class="fa-solid fa-location-dot"></i></span> Số
+                        18 ngõ 12B, Phố Lý Nam Đế, P.Hàng Mã, Hoàn Kiếm
+                      </li>
+                      <li class="contact">
+                        <span><i class="fa-solid fa-phone-volume"></i></span>
+                        0932000889
+                      </li>
+                      <li class="contact">
+                        <span><i class="fa-solid fa-shop"></i></span> Giờ làm
+                        việc: 9h30-19h (T2 - T7)
+                      </li>
+                      <li class="contact">
+                        <span><i class="fa-solid fa-paper-plane"></i></span>
+                        hanoi@khacten.com
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="bottom-footer text-center">
+          <div class="container-fluid">
+            <p>
+              Copyright © 2024 <a href="">Khacten.com</a>.
+              <a href="">Powered by Haravan </a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Script -->
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/product_detail.js"></script>
+    
+  </body>
+</html>

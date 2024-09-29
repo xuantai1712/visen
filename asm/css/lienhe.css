@@ -1,0 +1,124 @@
+
+/* main */
+@media (min-width: 992px) {
+    .block-contact {
+        display: flex;
+        margin: 0 auto;
+        max-width: 768px;
+    }
+}
+.block-contact .f-left {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    /* background: #ff5b6a; */
+    background: #d99009;
+    color: #fff;
+    padding: 24px;
+    margin-right: 24px;
+    width: 280px;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+/* * {
+    scrollbar-width: thin;
+    scrollbar-color: #FF5B6A transparent;
+} */
+
+.block-contact .f-left .f-name {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.block-contact .f-left .icon {
+    margin-right: 12px;
+}
+.block-contact .f-left .f-row+.f-row {
+    margin-top: 20px;
+}
+
+
+.contact-form {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .25);
+    padding: 24px 24px 32px;
+}
+.form-group label {
+    font-weight: 500;
+    display: block;
+}
+.col-form-label {
+    padding-top: calc(0.375rem + 1px);
+    padding-bottom: calc(0.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+}
+.form-control {
+    font-size: 16px;
+    /* border-color: #ff5b6a; */
+    height: auto;
+    padding: 7px 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+@media (min-width: 992px) {
+    .contact-form .form-group {
+        display: flex;
+    }
+}
+@media (min-width: 992px) {
+    .contact-form .offset-input {
+        margin-left: 113px;
+        text-align: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .contact-form .col-form-label {
+        flex: 1 95px;
+        max-width: 95px;
+        margin-right: 18px;
+    }
+}
+@media (min-width: 992px) {
+    .contact-form .col-input {
+        flex: 1 0;
+    }
+}
+.contact-form .form-group {
+    margin-bottom: 24px;
+}
+.contact-form .btn {
+    font-weight: 700;
+
+}
+.btn-primary, .btn-primary:focus, .btn-primary:hover {
+    /* background-color: #ff5b6a;
+    border-color: #ff5b6a; */
+    background-color: #d99009;
+    border-color: #d99009;
+}
+.contact-form .notes {
+    padding-top: 20px;
+    margin-bottom: 0;
+}
+.contact-form .notes a {
+    /* color: #ff5b6a; */
+    color: #d99009;
+    font-size: 16px;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+[
+    {
+      "id": 1,
+      "image": "./img/news1.jpg",
+      "post_content": "Bộ sản phẩm bao da cho iPhone 15 series",
+      "author": "Khanh Nguyen",
+      "date": "08.09.2023"
+    },
+
+    {
+      "id": 2,
+      "image": "./img/news2.png",
+      "post_content": "Ra mắt túi zbox: năng động - gọn hàng",
+      "author": "Khanh Nguyen",
+      "date": "19.07.2023"
+    },
+    {
+      "id": 3,
+      "image": "./img/news3.jpg",
+      "post_content": "Kê tay phím cơ SEN",
+      "author": "Khanh Nguyen",
+      "date": "20.05.2023"
+    },
+    {
+      "id": 4,
+      "image": "./img/news4.jpg",
+      "post_content": "Bao da chìa khoá xe hơi - MUA 1 TẶNG 1",
+      "author": "Khanh Nguyen",
+      "date": "20.06.2022"
+    },
+    {
+      "id": 5,
+      "image": "./img/news5.jpg",
+      "post_content": "Khắc Tên ra mắt Ví SEN 4, tặng code giảm giá 30%",
+      "author": "Khanh Nguyen",
+      "date": " 04.05.2022"
+    },
+
+    {
+      "id": 6,
+      "image": "./img/news6.jpg",
+      "post_content": "Bao da SEN AirTag",
+      "author": "Khanh Nguyen",
+      "date": " 12.04.2022"
+    },
+
+    {
+      "id": 7,
+      "image": "./img/news7.webp",
+      "post_content": "Dây da đồng hồ Khắc Tên",
+      "author": "Khanh Nguyen",
+      "date": " 07.04.2022"
+    }
+]

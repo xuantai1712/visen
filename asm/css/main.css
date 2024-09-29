@@ -1,0 +1,265 @@
+/* header */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:'Quicksand', sans-serif !important ;
+}
+a {
+  font-size: 15px;
+  color:#252a2b; 
+  text-decoration: none;
+  outline: none;
+}
+@media only screen and (max-width: 560px) {
+  a {
+    font-size: 12px;
+  }
+}
+li {
+list-style: none; 
+}
+.p-1 a::before{
+  color: #ccc;
+  content: "/\00a0";
+}
+a:hover{
+  color: #d99009;
+  font-family:'Quicksand', sans-serif !important ;
+}
+.navbar-nav li a:hover {
+  color: #d99009;
+}
+.bg-body-tertiary {
+  background-color: none !important;
+}
+.dropdown-hover:hover .dropdown-menu {
+    display: block;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+  
+  div.gallery {
+    border: 1px solid #ccc;
+  }
+  div.desc {
+    text-align: center;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+  
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.footer-form .btn{
+    border-radius: 20px;
+    border: 1px solid #FF4B2B;
+    background-color: #FF4B2B;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+} 
+.footer-form p{
+ font-size: 12px;
+ margin-bottom: 2px;
+} 
+.footer-form a{
+  font-size: 12px;
+  color: #f5a623;
+ }
+ .social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #DDDDDD;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+/* card */
+.card-title{
+  font-size: 16px;
+}
+.card-text{
+  font-size: 14px;
+}
+
+.link-header:hover {
+  text-decoration: none;
+  color: #d99009;
+  
+}
+.navbar-nav li a:hover {
+  color: #d99009;
+}
+h3{
+  color: #fff;
+}
+.content-image {
+  position: relative;
+}
+.title-img {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  line-height: 4;
+  
+}
+
+.content_background{
+  position: relative;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; 
+  transition: linear;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.image-info{
+  width: 100%;
+  object-fit: cover;
+}
+.img-title {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  list-style: 1.4;
+  text-align: center;
+  font-size: 18px;
+}
+
+.title-content {
+  width: 100%;
+  height: 100%;
+  z-index: 0; 
+} 
+.info {
+  margin: auto;
+  max-width: 80%;
+  list-style: 1.2;
+  font-size: 14px;
+}
+
+
+/* footer */
+.footer-title {
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  position: relative;
+  line-height: 30px;
+}
+.footer-content .footerNav-social li a {
+  width: 32px;
+  height: 32px;
+  color: #252a2b;
+  text-decoration: none;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid #e7e7e7;
+  display: block;
+  text-align: center;
+  border-radius: 4px;
+  transition: 0.4s;
+}
+.phone-contact span {
+  margin: 4px;
+}
+.phone-contact span a {
+  text-decoration: none;
+  color: #252a2b;
+}
+.phone-contact span a:hover {
+  
+  text-decoration: none;
+  color: #d99009;
+}
+.footer-content .footerNav-social li a:hover {
+  color: #d99009;
+  text-decoration: none;
+  outline: none;
+}
+.footer-title {
+  font-family: 'Quicksand', sans-serif ,!important;
+  font-size: 18px;
+}
+.footer-content li {
+list-style-type: none;
+}
+.item a{
+  text-decoration: none;
+  line-height: 28px;
+  color: #252a2b;
+  font-size: 14px;
+}
+.item a:hover {
+  color: #d99009;
+  text-decoration: none;
+  outline: none;
+}
+ul{
+  padding-left: 0 !important;
+}
+.contact {
+  line-height: 28px;
+  font-size: 14px;
+}
+.bottom-footer p a {
+  text-decoration: none;
+  color: #252a2b;
+}
+.bottom-footer p{
+  font-size: 14px;
+  color: #252a2b;
+}
+.bottom-footer p a:hover {
+  color: #d99009;
+  text-decoration: none;
+  outline: none;
+} 

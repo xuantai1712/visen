@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> -->
+  <link rel="stylesheet" href="./css/giohang.css">
+  <title>Giỏ Hàng</title>
+</head>
+
+<body>
+  <div class="container-fluid" >
+    <div class="mainContent-theme">
+      <div class="container bg-body-tertiary">
+        <div class="row">
+          <div class="col">
+            <ul class="d-flex">
+              <li class="p-1"><a href="#!">Trang chủ</a></li>
+              <li class="p-1"><a href="#">Giỏ hàng</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- header -->
+    <div class="wrapper-cart-detail">
+      <div class="container">
+        <div class="heading-page">
+          <div class="header-page text-center">
+            <h1>Giỏ hàng của bạn</h1>
+            <p class="count-cart">Có <span>{{ cart.length }} sản phẩm</span> trong giỏ hàng</p>
+          </div>
+        </div>
+        <div class="row wrapbox-content-cart">
+          <div class="col-md-8 col-sm-8 col-xs-12 contentCart-detail">
+
+            <div class="cart-container">
+              <div class="cart-col-left">
+                <div class="main-content-cart">
+                  <form action="" method="post" id="cartformpage">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <table class="table-cart">
+                          <thead>
+                            <tr>
+                              <th class="image">&nbsp;</th>
+                              <th class="item">Tên sản phẩm</th>
+                              <th class="remove">&nbsp;</th>
+                            </tr>
+                          </thead>
+                          <tbody ng-repeat="p in cart">
+                            <tr class="line-item-container">
+                              <td class="image">
+                                <div class="product_image">
+                                  <a href="">
+                                    <img src="{{p.img1}}" alt="">
+                                  </a>
+                                </div>
+                              </td>
+                              <td class="item m-auto">
+                                <h3><a href="#">{{p.proName}}</a></h3>
+                                <p>
+                                  <span class="pri">{{p.proPrice | number:2}}đ</span>
+                                </p>
+                                <div class="clearfix">
+                                  <div class="qty quantity-partent qty-click clearfix">
+                                    <button type="button" class="qtyminus qty-btn" ng-click="updateQuantity(p, -1)">-</button>
+                                    <input type="text" size="4" name="updates[]" min="1" ng-model="p.qty" ng-change="updateQuantity(p)" class="tc line-item-qty item-quantity">
+                                    <button type="button" class="qtyplus qty-btn" ng-click="updateQuantity(p, 1)">+</button>
+                                  </div>
+                                  <p class="price">
+                                    <span class="text">Thành tiền:</span>
+                                    <span class="line-item-total">{{p.proPrice * p.qty | number:2}}₫</span>
+                                  </p>
+                                </div>
+                              </td>
+                              <td class="remove">
+                                <a href="" class="cart" ng-click="removeItem(p)">
+                                  <img src="./img/ic_close.webp">
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5 col-sm-12 col-xs-12">
+                        <div class="sidebox-group">
+                          <h4>Ghi chú đơn hàng</h4>
+                          <div class="checkout-note clearfix">
+                            <textarea id="note" name="note" rows="4" placeholder="Ghi chú"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-7 col-sm-12 col-xs-12 hidden-xs">
+                        <div class="sidebox-group sidebox-policy">
+                          <h4>Chính sách mua hàng</h4>
+                          <ul>
+                            <li>Khắc Tên nhận đổi hàng đối với sản phẩm làm sẵn và không có khắc tên.</li>
+                            <li>Sản phẩm chưa qua sử dụng và được gửi trả trong vòng 7&nbsp;ngày kể từ ngày nhận hàng.
+                            </li>
+                            <li>*Lưu ý: Khách hàng phải chịu chi phí vận chuyển nếu có đổi trả.</li>
+                            <li></li>
+                          </ul>
+                        </div>
+                        <!-- <div class="cart-buttons hidden">
+                                            <button type="submit" id="update-cart" class="btn-update button dark hidden" name="update" value="">Cập nhật</button>
+                                            <button type="submit" id="checkout" class="btn-checkout button dark hidden" name="checkout" value="">Thanh toán</button>
+                                        </div> -->
+
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- End cart -->
+          </div>
+          <div class="col-md-4 col-sm-12 col-xs-12  sidebarCart-sticky">
+            <div class="sidebox-order">
+              <div class="sidebox-order-inner">
+                <div class="sidebox-order_title">
+                  <h3>Thông tin đơn hàng</h3>
+                </div>
+                <div class="sidebox-order_total">
+                  <p>Tổng tiền:
+                    <span class="total-price">{{calculateTotal() | number:2}}₫</span>
+                  </p>
+                </div>
+                <div class="sidebox-order_text">
+                  <p>Phí vận chuyển sẽ được tính ở trang thanh toán.<br>
+                    Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</p>
+                </div>
+                <div class="sidebox-order_action">
+                  <a href="#!pay" class="button dark btncart-checkout">THANH TOÁN</a>
+                  <p class="link-continue text-center">
+                    <a href="#!products">
+                      <i class="fa fa-reply"></i> Tiếp tục mua hàng
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebox-group sidebox-policy visible-xs">
+              <h4>Chính sách mua hàng</h4>
+              <ul>
+                <li>Khắc Tên nhận đổi hàng đối với sản phẩm làm sẵn và không có khắc tên.</li>
+                <li>Sản phẩm chưa qua sử dụng và được gửi trả trong vòng 7&nbsp;ngày kể từ ngày nhận hàng. </li>
+                <li>*Lưu ý: Khách hàng phải chịu chi phí vận chuyển nếu có đổi trả.</li>
+                <li></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- Script -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script> -->
+</body>
+
+</html>

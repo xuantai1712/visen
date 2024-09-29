@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="./css/main.css"> -->
+    <link rel="stylesheet" href="./css/product.css">
+    <title>Products</title>
+</head>
+<body ng-app="myapp">
+  
+<div class="container-fluid"  ng-controller="product_detailsCtrl">
+    <div class="container">
+    <div class="mainContent-theme">
+            <div class="container bg-body-tertiary">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <ul class="d-flex">
+                            <li class="p-1"><a href="#!">Trang chủ</a></li>
+                            <li class="p-1"><a href="">Danh mục</a></li>
+                            <li class="p-1"><a href="#!products">Tất cả sản phẩm</a></li>
+                          </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <img class="img-fluid" src="./img/collection_banner.webp" alt="">
+                </div>
+            </div>
+            
+           
+    </div>
+    <div class="main-content">
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col-md-3 col-sm-12 col-xs-12 mb-2" >
+            <div class="accordion-flush" id="accordionExample" >
+              <div class="accordion-item" >
+                <h6 class="accordion-header">
+                  <h6 style="font-size:14px;">Ví SEN</h6>
+                 <a href=""class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                 Thương hiệu <span class="p-1"><i class="fa-solid fa-minus"></i></span>
+                </a> 
+                </h6>
+                <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+                  <div class="accordion-body ">
+                    <ul style="line-height: 2;">
+                      <li><a class="dropdown-item" ng-click="keyword ='Iphone' " href="" >Apple</a></li>
+                      <li><a class="dropdown-item" ng-click="keyword ='Samsung' " href="">Samsung</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h6 class="accordion-header">
+                  <a href="" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                   Bao da chìa khóa<span class="p-1"><i class="fa-solid fa-minus"></i></span>
+                  </a>
+                </h6>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <ul style="line-height: 2;">
+                      <li><a class="dropdown-item " ng-click="keyword ='Audi' " href="">Audi</a></li>
+                      <li><a class="dropdown-item" ng-click="keyword ='BMW' " href="">BMW</a></li>
+                      <li><a class="dropdown-item "ng-click="keyword ='Bentley' " href="">Bentley</a></li>
+                      <li><a class="dropdown-item" ng-click="keyword ='Ducati' " href="">Ducati</a></li>
+                      <li><a class="dropdown-item " ng-click="keyword ='Ford' " href="">Ford</a></li>
+                      <li><a class="dropdown-item"ng-click="keyword ='Vollaswagen' " href="">Vollswagen</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h6 class="accordion-header">
+                  <a class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Bao da điện thoại<span class="p-1"><i class="fa-solid fa-minus"></i></span>
+                  </a>
+                </h6>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <ul style="line-height: 2;">
+                      <li><a class="dropdown-item" ng-click="keyword ='Dán da điện thoại' " href="">Dán da điện thoại</a></li>
+                      <li><a class="dropdown-item" ng-click="keyword ='Bao da hộp' " href="">Bao da hộp</a></li>
+                      <li><a class="dropdown-item " ng-click="keyword ='Bao da đeo lưng' " href="">Bao da đeo lưng</a></li>
+                      <li><a class="dropdown-item" ng-click="keyword ='Bao da nắp dọc' " href="">Bao da nắp dọc</a></li>
+                      <li><a class="dropdown-item " ng-click="keyword ='Bao da nắp ngang' " href="">Bao da ngang</a></li>
+                      <li><a class="dropdown-item" ng-click="keyword ='Ví da điện thoại' " href="">Ví da điện thoại</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h6 class="accordion-header">
+                  <a class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Bao da Laptop - Máy Tính Bảng<span class="p-2"><i class="fa-solid fa-minus"></i></span>
+                  </a>
+                </h6>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <ul style="line-height: 2;">
+                      <li><a class="dropdown-item " ng-click="keyword ='Bao da nắp ngang' " href="">Bao da nắp ngang</a></li>
+                      <li><a class="dropdown-item" ng-click="keyword ='Bao da nắp gài' " href="">Bao da nắp gài</a></li>
+                      <li><a class="dropdown-item " ng-click="keyword ='Dán da Laptop/Máy tính Bảng' " href="">Dán da Laptop/Máy tính bảng</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h6 class="accordion-header">
+                  <a class="accordion-button  collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Dây da đồng hồ
+                  </a>
+                </h6>
+              </div>
+              <div class="accordion-item">
+                <h6 class="accordion-header">
+                  <a class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                   Bao da tai nghe
+                  </a>
+                </h6>
+              </div>
+              <div class="accordion-item">
+                <h6 class="accordion-header">
+                  <a class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  Dây máy ảnh
+                  </a>
+                </h6>
+              </div>
+              <div class="accordion-item">
+                <h6 class="accordion-header">
+                  <a class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  Bộ sưu tập Hoa Văn
+                  </a>
+                </h6>
+              </div>
+              <div class="accordion-item">
+                <h6 class="accordion-header">
+                  <a class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                  Sản phẩm khác
+                  </a>
+                </h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9 col-sm-12 col-xs-12">
+            <div class="wrap-collection-tiltle row">
+              <div class="col-md-8 col-sm-12 col-xs-12">
+                <h3 class="title">Tất cả sản phẩm</h3>
+              </div>
+              <div class="col-md-4 hidden-sm hidden-xs">
+                <div class="option browse-tags">
+                  <!-- <label class="lb-filter hidden-xs" for="sort-by">Sắp xếp theo</label> -->
+                  <div class="custom-dropdown dropdown" >
+                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Sắp xếp theo
+                    </a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="" ng-click="sortBy('proPrice')">Giá: Tăng dần</a> 
+                        </li>
+                        <li>
+                          <a href="" ng-click="sortBy('-proPrice')">Giá: Giảm dần</a> 
+                        </li>
+                        <li>
+                          <a href=""  ng-click="sortBy('proName')">Tên: A-Z</a>
+                        </li>
+                        <li>
+                          <a href=""  ng-click="sortBy('-proName')">Tên: Z-A</a>
+                        </li>
+                      </ul>
+                 
+                    
+                     
+                
+                      <!-- <option value="updated_at" data-filter="&sortby=(updated_at:desc)">Cũ nhất</option>
+                      <option value="created_at" data-filter="&sortby=(created_at:asc)">Mới nhất</option>
+                      <option value="sold_quantity" data-filter="&sortby=(sold_quantity:desc)">Bán chạy nhất</option>
+                      <option value="-sold_quantity" data-filter="&sortby=(sold_quantity:desc)">Tồn kho: Giảm dần</option>  -->
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row filter-here ">
+              <div class="content-product-list product-list filter clearfix d-flex flex-wrap">
+                  <div class="col-md-3 col-sm-6 col-xs-6 col-6 pro-loop p-2" ng-repeat="sp in dssp | filter: keyword |filter:searchProduct:keyword:['proName','proPrice'] | orderBy: p | limitTo: limit : start">
+
+
+                      <div class="product-block product-resize fixheight" >
+                        <img src="{{sp.img1}}" alt="Khắc thêm" class="img-thumbnail">
+                        <div class="overlay">
+                          <div class="product-img">
+                            <a href="#!productsdetail/{{sp.id}}"> <img  src="{{sp.img2}}" alt="Bose Ultra Open Earbuds - Bao da SEN tai nghe" class="img-thumbnail"></a>
+                          </div>
+                    </div>
+                </div>
+                <div class="product-detail clearfix ">
+                  <div class="box-pro-detail">
+                    <h6 class="pro-name">
+                      <a href="" title="Khắc thêm">{{sp.proName}}</a>
+                    </h6>
+                    <div class="box-pro-price">
+                      <p class="pro-price">
+                        <span>{{sp.proPrice |number:2}}đ</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                   
+                  
+              </div>
+        </div>
+        <div class="sortpagibar pagi clearfix">
+          <div class="clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item {{(page == 1)? 'disabled' : ''}}">
+                    <a class="page-link" ng-click="changePage(page-1)"><span><i class="fa-solid fa-arrow-left"></i></span></a>
+                  <li class="page-item {{(page==trang)? 'active' : ''}}" ng-repeat="trang in pageList"><a class="page-link " ng-click="changePage(trang)">{{trang}}</a></li>
+                  
+                  <li class="page-item {{(page == totalPage)? 'disabled' : ''}}">
+                    <a class="page-link" ng-click="changePage(page+1)"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    
+
+</div>
+</div>
+
+    <!-- Script -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+</body>
+</html>

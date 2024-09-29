@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/tintuc.css" />
+    <title>Tin Tức</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="mainContent-theme">
+        <div class="container bg-body-tertiary">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <ul class="d-flex">
+                <li class="p-1"><a href="#!">Trang chủ</a></li>
+                <li class="p-1"><a href="#">Tin tức</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- main -->
+      <div class="wrapper-row pd-page pt-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-12 col-xs-12">
+              <div class="sidebar-blog">
+                <div class="news-latest" >
+                  <div class="sidebarblog-title title_block" ng-click="showHide('list-news-latest')">
+                    <h2 >
+                      Bài viết mới nhất<span
+                        class="fa fa-angle-down"
+                        hidden="true"
+                      ></span>
+                    </h2>
+                  </div>
+                  <div
+                    class="list-news-latest layered"  
+                    id="list-news-latest"
+                    style="display: none"
+                  >
+                    <div class="item-article clearfix" ng-repeat="new in news">
+                      <div class="post-image">
+                        <a href=""
+                          ><img
+                            class="ls-is-cached lazyloaded"
+                            data-src="{{new.image}}"
+                            src=""
+                            alt="{{new.post_content}}"
+                        /></a>
+                      </div>
+
+                      <div class="post-content">
+                        <h3>
+                          <a href="#">{{new.post_content}}</a>
+                        </h3>
+                        <span class="author">
+                          <a href="#">{{new.author}}</a>
+                        </span>
+                        <span class="date"> {{new.date}} </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="menu-blog">
+                  <div class="group-menu">
+                    <div class="sidebarblog-title title_block" ng-click="showHide('layered-category')">
+                      <h2>
+                        Xem Thêm<span
+                          class="fa fa-angle-down"
+                          hidden="true"
+                        ></span>
+                      </h2>
+                    </div>
+                    <div
+                      class="layered layered-category" 
+                      id="layered-category"
+                      style="display: none"
+                    >
+                      <div class="layered-content">
+                        <ul class="tree-menu">
+                          <li class="">
+                            <span></span>
+                            <a class="" href="" title="Ví SEN" target="_self">
+                              Ví SEN
+                            </a>
+                          </li>
+
+                          <li class="tree-menu-lv1 has-child menu-collap">
+                            <a
+                              class="thuong-hieu"
+                              href=""
+                              title="Thương hiệu"
+                              target="_self"
+                            >
+                              <span ng-click="showHide('tree1')" class=""
+                                >Thương hiệu</span
+                              >
+                              <span class="icon-control"
+                                ><i class="fa fa-minus"></i
+                              ></span>
+                            </a>
+                            <ul
+                              class="tree-menu-sub"
+                              id="tree1"
+                              style="display: none"
+                            >
+                              <li>
+                                <span></span>
+                                <a href="" title="Apple">Apple</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Samsung">Samsung</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="tree-menu-lv1 has-child menu-collap">
+                            <a
+                              class=""
+                              href=""
+                              title="Bao da chìa khoá"
+                              target="_self"
+                            >
+                              <span ng-click="showHide('tree2')" class=""
+                                >Bao da chìa khoá</span
+                              >
+                              <span class="icon-control"
+                                ><i class="fa fa-minus"></i
+                              ></span>
+                            </a>
+                            <ul
+                              class="tree-menu-sub"
+                              id="tree2"
+                              style="display: none"
+                            >
+                              <li>
+                                <span></span>
+                                <a href="" title="Audi">Audi</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="BMW">BMW</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Bentley">Bentley</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Brixton">Brixton</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Chevrolet">Chevrolet</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Ducati">Ducati</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Dodge">Dodge</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Ford">Ford</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Honda">Honda</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Hyundai">Hyundai</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Harley">Harley</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Isuzu">Isuzu</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Kia">Kia</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Volkswagen">Volkswagen</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Land Rover">Land Rover</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Mazda">Mazda</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Mercedes">Mercedes</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Mitsubishi">Mitsubishi</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Peugeot">Peugeot</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Porsche">Porsche</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Range Rover">Range Rover</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Subaru">Subaru</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Suzuki">Suzuki</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Toyota">Toyota</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Vespa">Vespa</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="VinFast">VinFast</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Yamaha">Yamaha</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="tree-menu-lv1 has-child menu-collap">
+                            <a
+                              class=""
+                              href=""
+                              title="Bao da điện thoại"
+                              target="_self"
+                            >
+                              <span ng-click="showHide('tree3')" class=""
+                                >Bao da điện thoại</span
+                              >
+                              <span class="icon-control"
+                                ><i class="fa fa-minus"></i
+                              ></span>
+                            </a>
+                            <ul
+                              class="tree-menu-sub"
+                              id="tree3"
+                              style="display: none"
+                            >
+                              <li>
+                                <span></span>
+                                <a href="" title="Dán da điện thoại"
+                                  >Dán da điện thoại</a
+                                >
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Bao da hộp">Bao da hộp</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Bao da đeo lưng"
+                                  >Bao da đeo lưng</a
+                                >
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Bao da nắp dọc"
+                                  >Bao da nắp dọc</a
+                                >
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Bao da ngang">Bao da ngang</a>
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Ví da điện thoại"
+                                  >Ví da điện thoại</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="tree-menu-lv1 has-child menu-collap">
+                            <a
+                              class=""
+                              href=""
+                              title="Bao da Laptop - Máy tính bảng"
+                              target="_self"
+                            >
+                              <span ng-click="showHide('tree4')" class=""
+                                >Bao da Laptop - Máy tính bảng</span
+                              >
+                              <span class="icon-control"
+                                ><i class="fa fa-minus"></i
+                              ></span>
+                            </a>
+                            <ul
+                              class="tree-menu-sub"
+                              id="tree4"
+                              style="display: none"
+                            >
+                              <li>
+                                <span></span>
+                                <a href="" title="Bao da nắp ngang"
+                                  >Bao da nắp ngang</a
+                                >
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Bao da nắp gài"
+                                  >Bao da nắp gài</a
+                                >
+                              </li>
+
+                              <li>
+                                <span></span>
+                                <a href="" title="Dán da Laptop/Máy Tính Bảng"
+                                  >Dán da Laptop/Máy Tính Bảng</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="">
+                            <span></span>
+                            <a
+                              class=""
+                              href=""
+                              title="Dây da đồng hồ"
+                              target="_self"
+                            >
+                              Dây da đồng hồ
+                            </a>
+                          </li>
+
+                          <li class="">
+                            <span></span>
+                            <a
+                              class=""
+                              href=""
+                              title="Bao da tai nghe"
+                              target="_self"
+                            >
+                              Bao da tai nghe
+                            </a>
+                          </li>
+
+                          <li class="">
+                            <span></span>
+                            <a
+                              class=""
+                              href=""
+                              title="Dây máy ảnh"
+                              target="_self"
+                            >
+                              Dây máy ảnh
+                            </a>
+                          </li>
+
+                          <li class="">
+                            <span></span>
+                            <a
+                              class=""
+                              href=""
+                              title="Bộ sưu tập Hoa Văn"
+                              target="_self"
+                            >
+                              Bộ sưu tập Hoa Văn
+                            </a>
+                          </li>
+
+                          <li class="">
+                            <span></span>
+                            <a
+                              class=""
+                              href=""
+                              title="Sản phẩm khác"
+                              target="_self"
+                            >
+                              Sản phẩm khác
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9 col-sm-12 col-xs-12">
+              <div class="heading-page clearfix">
+                <h1>Tin tức</h1>
+              </div>
+              <div class="blog-content">
+                <div class="list-article-content blog-posts" ng-repeat="new in news">
+                  <!-- Begin: Nội dung blog -->
+                  <article class="blog-loop" >
+                    <div class="blog-post row">
+                      <div class="col-md-4 col-xs-12 col-sm-12">
+                        <a
+                          href="#!news/{{new.id}}"
+                          class="blog-post-thumbnail"
+                          title="Bộ sản phẩm bao da cho iPhone 15 series"
+                          rel="nofollow"
+                        >
+                          <img
+                            class="ls-is-cached lazyloaded"
+                            data-src="{{new.image}}"
+                            src=""
+                            alt="{{new.post_content}}"
+                          />
+                        </a>
+                      </div>
+
+                      <div class="col-md-8 col-xs-12 col-sm-12">
+                        <h3 class="blog-post-title">
+                          <a
+                            href=""
+                            title="Bộ sản phẩm bao da cho iPhone 15 series"
+                            >{{new.post_content}}</a
+                          >
+                        </h3>
+                        <div class="blog-post-meta">
+                          <span class="author vcard"
+                            >{{new.author}}</span
+                          >
+                          <span class="date">
+                            <time pubdate="" datetime="2023-09-08"
+                              >{{new.date}}</time
+                            >
+                          </span>
+                        </div>
+                        <p class="entry-content">
+                          Các bạn chờ đợi gì ở sự kiện apple đêm
+                          nay&nbsp;12/9/2023, Khắc Tên thì không chờ đợi nữa,
+                          bọn mình đã chuẩn bị sẵn các...
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                  </div>
+                <div id="pagination" class="clearfix">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <span class="page-node current">1</span>
+
+                    <a class="page-node" href="#">2</a>
+
+                    <a class="page-node" href="#">3</a>
+
+                    <a class="next" href="#">
+                      <svg
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 31 10"
+                        style="
+                          enable-background: new 0 0 31 10;
+                          width: 31px;
+                          height: 10px;
+                        "
+                        xml:space="preserve"
+                      >
+                        <polygon
+                          points="31,5 25,0 25,4 0,4 0,6 25,6 25,10 "
+                        ></polygon>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

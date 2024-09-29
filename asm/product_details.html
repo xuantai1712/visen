@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/products_details.css" />
+    <title>Chi Tiết Sản Phẩm</title>
+  </head>
+  <body ng-app="myapp">
+    <div class="container" >
+      <div class="mainContent-theme">
+        <div class="containerbg-body-tertiary">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <ul class="d-flex">
+                <li class="p-1"><a href="#!">Trang chủ</a></li>
+                <li class="p-1"><a href="">Danh mục</a></li>
+                <li class="p-1"><a href="#!products">Tất cả sản phẩm</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- main -->
+      <div class="product-detail-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="row product-detail-main pr_style_01 clearfix">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="card">
+                      <div class="card-body text-center"> 
+                        <img id="changeImage" class="img-thumbnail" src="{{product.img1}}" alt="" onclick="changeImage(this)" onmousemove="changeImage(this)">
+                    </div>
+                      <div class="card-body justify-content-center d-flex">
+                        <div class="item-1">
+                            <img class="img-fluid" src="{{product.img2}}" alt="" onclick="changeImage(this)" onmousemove="changeImage(this)">
+                        </div>
+                        <div class="item-1">
+                            <img  class="img-fluid" src="{{product.img3}}" alt="" onclick="changeImage(this)" onmousemove="changeImage(this)">
+                        </div>
+                        <div class="item-1">
+                            <img  class="img-fluid" src="{{product.img4}}" alt="" onclick="changeImage(this)" onmousemove="changeImage(this)">
+                        </div>
+                        <div class="item-1">
+                            <img class="img-fluid" src="{{product.img5}}" alt="" onclick="changeImage(this)" onmousemove="changeImage(this)">
+                        </div>
+                    </div>
+                    </div>
+                
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 product-content-desc"
+                id="detail-product" >                
+                  <div class="product-title">
+                    <h3>{{product.proName}}</h3>
+                    <span id="pro_sku">SKU: SP001733145</span>
+                  </div>
+                  <div class="product-price" id="price-preview">
+                    <span class="pro_price">{{product.proPrice|number:2}}đ</span>
+                  </div>
+                  <form
+                    action="/cart/add"
+                    id="add-item-form"
+                    method="post"
+                    class="variants clearfix"
+                  >
+                  <div class="select-swatch clearfix">
+                    <div class="swatch clearfix">
+                      <div class="header">
+                        Màu sắc
+                        <span></span>
+                      </div>
+                      <div class="select-swap" ng-controller ="product_detailsCtrl">
+                        <!-- <div ng-repeat="color in colors" ng-style="{ 'background-color': color.hex }" class="swatch {{ color.class }}">
+                          <input type="radio" class="variant-0" name="option1" id="{{ color.id }}" ng-model="selectedColor" ng-checked="selectedColor === color.hex" value="{{ color.value }}">
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                    <div class="selection-actions">
+                      <div class="quantity-area clearfix">
+                        <input
+                          type="button"
+                          value="-"
+                          onclick="minusQuantity()"
+                          class="qty-btn"
+                        />
+                        <input
+                          type="text"
+                          id="quantity"
+                          name="quantity"
+                          value="1"
+                          min="1"
+                          class="quantity-selector"
+                        />
+                        <input
+                          type="button"
+                          value="+"
+                          onclick="plusQuantity()"
+                          class="qty-btn"
+                        />
+                      </div>
+                      <input
+                        type="hidden"
+                        name="properties[Nội dung khác]"
+                        placeholder="...."
+                        class="check_change"
+                      />
+                      <input
+                        type="hidden"
+                        name="properties[Yêu cầu khác]"
+                        placeholder="...."
+                      />
+                      <div class="wrap-addcart clearfix">
+                        <button
+                          type="button"
+                          id="add-content"
+                          class="button light"
+                          name="add-content"
+                        >
+                          Nội dung khắc
+                        </button>
+                        <button style="font-size:10px;"
+                          type="button"
+                          id="add-to-cart"
+                          class="add-to-cartProduct button dark btn-addtocart addtocart-modal"
+                          name="add" ng-click="addToCart()"
+                        >
+                        Thêm vào giỏ hàng
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="product-description">
+                    <div class="title-bl mt-2">
+                      <h4>Mô tả</h4>
+                    </div>
+                    <div class="description-content">
+                      <div class="description-productdetail">
+                        <p>
+                          Sản phẩm được thiết kế riêng cho bao da tai nghe Bose
+                          Ultra Open Earbuds. Thiết kế tối giản với đường cắt
+                          góc bo tròn mềm mại ôm sát sản phẩm, lớp da bò thô bên
+                          trong giúp làm sạch bề mặt hộp đựng tai nghe và tạo
+                          cảm giác thân thiện, thao tác đóng mở sẽ dễ dàng hơn
+                          với thiết kế nam châm và dây đeo tay thời trang tiện
+                          dụng. Tất cả tạo nên sự khác biệt với bao da Bose QC
+                          Earbuds 2 của Khắc Tên.
+                        </p>
+                        <ul>
+                          <li>Chất liệu : Da bò thật</li>
+                          <li>Trọng lượng : ~25gr</li>
+                          <li>
+                            Công nghệ : Cắt, khắc bằng Laser cho độ chính xác
+                            tuyệt đối trên sản phẩm
+                          </li>
+                          <li>
+                            May thủ công hoàn toàn với những đôi bàn tay khéo
+                            léo, mỗi đường kim mũi chỉ thể hiện sự tâm huyết của
+                            người nghệ sĩ trên tác phẩm của mình, mang đến trải
+                            nghiệm tốt nhất cho người dùng
+                          </li>
+                          <li>Sản xuất : Việt Nam.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="heading-title text-center">
+                <h2>SẢN PHẨM LIÊN QUAN</h2>
+              </div>
+              <div class="list-peoductReated clerfix d-flex flex-wrap">
+                <div class="col-md-3 col-sm-6 col-xs-6 pro-loop col-6 p-2">
+                  <div class="product-block product-resize fixheight">
+                    <img
+                      src="./img/spthem1.webp"
+                      alt="Khắc thêm"
+                      class="img-thumbnail"
+                    />
+                    <div class="overlay">
+                      <div class="product-img">
+                        <img
+                          src="./img/spthem2.jpg"
+                          alt="Khắc tên"
+                          class="img-thumbnail"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-detail clearfix">
+                    <div class="box-pro-detail">
+                      <h6 class="pro-name">
+                        <a href="" title="Acura MDX 2022 - Bao da chìa khoá<"
+                          >Acura MDX 2022 - Bao da chìa khoá</a
+                        >
+                      </h6>
+                      <div class="box-pro-price">
+                        <p class="pro-price">
+                          <span>400,000đ</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-6 pro-loop col-6 p-2">
+                  <div class="product-block product-resize fixheight">
+                    <img
+                      src="./img/spthem3.webp"
+                      alt="Adidas - Bao da tai nghe"
+                      class="img-thumbnail"
+                    />
+                    <div class="overlay">
+                      <div class="product-img">
+                        <img
+                          src="./img/spthem4.webp"
+                          alt="Adidas - Bao da tai nghe"
+                          class="img-thumbnail"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-detail clearfix">
+                    <div class="box-pro-detail">
+                      <h6 class="pro-name">
+                        <a href="" title="Adidas - Bao da tai nghe"
+                          >Adidas - Bao da tai nghe</a
+                        >
+                      </h6>
+                      <div class="box-pro-price">
+                        <p class="pro-price">
+                          <span>500,000đ</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-6 pro-loop col-6 p-2">
+                  <div class="product-block product-resize fixheight">
+                    <img
+                      src="./img/spthem5.webp"
+                      alt="Audi A3 - Bao da chìa khóa (móc dây da)"
+                      class="img-thumbnail"
+                    />
+                    <div class="overlay">
+                      <div class="product-img">
+                        <img
+                          src="./img/spthem6.webp"
+                          alt="Audi A3 - Bao da chìa khóa (móc dây da)"
+                          class="img-thumbnail"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-detail clearfix">
+                    <div class="box-pro-detail">
+                      <h6 class="pro-name">
+                        <a
+                          href=""
+                          title="Audi A3 - Bao da chìa khóa (móc dây da)"
+                          >Audi A3 - Bao da chìa khóa (móc dây da)</a
+                        >
+                      </h6>
+                      <div class="box-pro-price">
+                        <p class="pro-price">
+                          <span>400,000đ</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6 pro-loop col-6 p-2">
+                  <div class="product-block product-resize fixheight">
+                    <img
+                      src="./img/spthem7.webp"
+                      alt="Audi Q4 - Bao da chìa khóa (móc carabiner)"
+                      class="img-thumbnail"
+                    />
+                    <div class="overlay">
+                      <div class="product-img">
+                        <img
+                          src="./img/spthem8.webp"
+                          alt="Audi Q4 - Bao da chìa khóa (móc carabiner)"
+                          class="img-thumbnail"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-detail clearfix">
+                    <div class="box-pro-detail">
+                      <h6 class="pro-name">
+                        <a
+                          href=""
+                          title="Audi Q4 - Bao da chìa khóa (móc carabiner)"
+                          >Audi Q4 - Bao da chìa khóa (móc carabiner)</a
+                        >
+                      </h6>
+                      <div class="box-pro-price">
+                        <p class="pro-price">
+                          <span>400,000đ</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <h1>{{ productDetail.name }}</h1>
+<p>{{ productDetail.description }}</p>
+<p>Giá: {{ productDetail.price }}</p> -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+       <script src="./js/product_detail.js"></script> -->
+       
+  </body>
+</html>

@@ -1,0 +1,81 @@
+
+/* main */
+
+.accordion-button {
+  font-weight: 600;
+  font-size: 13px !important;
+  line-height: 2;
+}
+
+.option .custom-dropdown .custom-dropdown__select {
+  font-size: 14px;
+    width: 100%;
+    display: block;
+    height: 30px;
+    padding: 0 20px 0 0;
+    border-color: transparent;
+    border-bottom: 1px solid #000;
+    background-color: #fff;
+    outline: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    cursor: pointer;
+    text-indent: 1px;
+}
+ .custom-dropdown {
+  width: auto;
+ float: inline-end;
+}
+
+/* .custom-dropdown {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 0px;
+} */
+.product-block{
+  position: relative;
+  width: 100%;
+}
+
+.img-thumbnail{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+ 
+}
+.product-block:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.product-img {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%); 
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.pagination a {
+  color:#252a2b; 
+  cursor: pointer;
+}
+.pagination a :hover {
+  color: #d99009;
+}

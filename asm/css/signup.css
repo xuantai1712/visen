@@ -1,0 +1,140 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    font-size: 14px;
+    color: #252a2b;
+    overflow-x: hidden;
+    background: #fff;
+    position: initial !important;
+}
+
+.mainContent-theme {
+    min-height: 80vh;
+}
+@media (min-width: 1200px) {
+    .container-fluid {
+        max-width: 1600px;
+        padding: 0 85px;
+    }
+}
+@media (min-width: 992px) {
+    .wrapbox-heading-account {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        border-right: 1px solid #ededed;
+        height: 100vh;
+        padding: 0;
+    }
+}
+@media (min-width: 1200px) {
+    .wrapbox-heading-account .header-page {
+        width: 60%;
+    }
+}
+/* @media (min-width: 992px) {
+    .wrapbox-heading-account .header-page {
+        padding-bottom: 70px;
+    }
+} */
+.wrapbox-heading-account {
+    position: relative;
+    
+}
+
+.wrapbox-heading-account .header-page h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0px 0;
+    line-height: initial;
+}
+.wrapbox-heading-account .header-page:after {
+    content: "";
+    background: #000;
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin-top: 70px;
+}
+.userbox input[type=email], .userbox input[type=password], .userbox input[type=text] {
+    width: 100%;
+    height: 55px;
+    border: 1px solid transparent;
+    background: #ededed;
+    color: #252a2b;
+    padding: 0 20px;
+    font-weight: 500;
+    
+}
+@media (min-width: 1200px) {
+    .wrapbox-content-account {
+        padding: 100px;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-6 {
+        width: 50%;
+    }
+}
+.large_form {
+    margin-bottom: 30px;
+}
+.large_form.large_form-mr10 {
+    margin-bottom: 10px;
+}
+
+.sitebox-recaptcha {
+    padding: 6px 0 0;
+    text-align: left;
+    color: #9e9e9e;
+    font-size: 13px;
+    clear: both;
+}
+.sitebox-recaptcha a {
+    color: #2962ff;
+}
+
+/* .action_account_custommer .action_bottom, .action_account_custommer .req_pass {
+    display: inline-block;
+    vertical-align: middle;
+} */
+
+.action_bottom button {
+    color: #fff;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    background-color: #f5a623;
+    border: 1px solid #f5a623;
+}
+.action_bottom button:hover  {
+    color: #333;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    background-color: #f5a623;
+    border: 1px solid #f5a623;
+}
+.come-back {
+    margin-top: 35px;
+    display: block;
+    font-weight: 500;
+    color: #f5a623;
+}
+.come-back i {
+    margin-right: 20px;
+}
+/* .invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #dc3545;
+    text-align: left;
+    font-style: italic;
+  } */
